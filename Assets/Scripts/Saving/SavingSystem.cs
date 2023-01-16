@@ -8,8 +8,21 @@ using UnityEngine.SceneManagement;
 
 namespace RPG.Saving
 {
+    /// <summary>
+    /// 该组件提供与保存系统的接口。 
+    /// 提供了保存和恢复场景的方法。
+    /// 
+    /// 该组件应只创建一次并在所有后续场景之间共享。
+    /// </summary>
     public class SavingSystem : MonoBehaviour
     {
+        /// <summary>
+        /// 将加载最后一次保存的场景并恢复状态。 
+        /// 这必须作为协程运行。
+        /// </summary>
+        /// <param name="saveFile">
+        /// 用于加载的保存文件。
+        /// </param>
         public IEnumerator LoadLastScene(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
@@ -21,7 +34,10 @@ namespace RPG.Saving
             yield return SceneManager.LoadSceneAsync(buildIndex);
             RestoreState(state);
         }
-
+        /// <summary>
+        /// 将当前场景保存到提供的保存文件中。
+        /// </summary>
+        /// <param name="saveFile"></param>
         public void Save(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
@@ -33,7 +49,10 @@ namespace RPG.Saving
         {
             RestoreState(LoadFile(saveFile));
         }
-
+        /// <summary>
+        /// 删除给定保存文件中的状态。
+        /// </summary>
+        /// <param name="saveFile"></param>
         public void Delete(string saveFile)
         {
             File.Delete(GetPathFromSaveFile(saveFile));

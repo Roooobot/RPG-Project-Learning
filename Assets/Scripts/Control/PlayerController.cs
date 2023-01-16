@@ -24,6 +24,8 @@ namespace RPG.Control
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float raycastRadius = 1f;
 
+        bool isDraggingUI = false;
+
         private void Awake()
         {
             health = GetComponent<Health>();
@@ -32,7 +34,7 @@ namespace RPG.Control
         private void Update()
         {
             if (InteractWithUI()) return;
-            if (health.IsDead()) 
+            if (health.IsDead())
             {
                 SetCursor(CursorType.None);
                 return;
@@ -46,17 +48,27 @@ namespace RPG.Control
 
         private bool InteractWithUI()
         {
-            if(EventSystem.current.IsPointerOverGameObject())
+            if (Input.GetMouseButtonUp(0))
             {
+                isDraggingUI = false;
+            }
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isDraggingUI = true;
+                }
                 SetCursor(CursorType.UI);
                 return true;
             }
+            if (isDraggingUI)
+                return true;
             return false;
         }
 
         private bool InteractWithComponent()
         {
-            RaycastHit[] hits = RaycastAllSorted(); 
+            RaycastHit[] hits = RaycastAllSorted();
             foreach (RaycastHit hit in hits)
             {
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
@@ -74,8 +86,8 @@ namespace RPG.Control
 
         RaycastHit[] RaycastAllSorted()
         {
-            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(),raycastRadius);
-            float[] distances= new float[hits.Length];
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
+            float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
                 distances[i] = hits[i].distance;
@@ -130,7 +142,7 @@ namespace RPG.Control
         {
             foreach (CursorMapping mapping in cursorMappings)
             {
-                if(mapping.type == type)
+                if (mapping.type == type)
                 {
                     return mapping;
                 }

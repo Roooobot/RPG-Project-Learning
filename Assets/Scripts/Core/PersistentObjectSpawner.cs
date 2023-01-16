@@ -5,7 +5,8 @@ namespace RPG.Core
 {
     public class PersistentObjectSpawner : MonoBehaviour
     {
-        [SerializeField] GameObject persistentObjectPerfab;
+        [Tooltip("这个预制件只会被生成一次，并且会在不同的场景之间保留")]
+        [SerializeField] GameObject persistentObjectPrefab = null;
 
         static bool hasSpawned = false;
 
@@ -19,7 +20,7 @@ namespace RPG.Core
 
         private void SpawnPersistentObjects()
         {
-            GameObject persistentObject = Instantiate(persistentObjectPerfab);
+            GameObject persistentObject = Instantiate(persistentObjectPrefab);
             DontDestroyOnLoad(persistentObject);
         }
     }
