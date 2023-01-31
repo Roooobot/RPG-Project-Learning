@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750faabe77079b24aaa107b8cb213593, type: 3}
+  m_Name: Mother hubbards bunions
+  m_EditorClassIdentifier: 
+  objectives:
+  - reference: 2
+    description: Go irritate the gguard.
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 5121910713906dc4c86f7256baf0e730, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: 682997af178be9442a4f49964c3187ad, type: 2}

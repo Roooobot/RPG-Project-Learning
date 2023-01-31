@@ -1,0 +1,287 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7583971798302735944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: c643f5cf-92cd-4ba6-807e-40bddfa3c069
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Do I look like docor?
+  children:
+  - 10770924-5b33-4695-b685-401aa95341ce
+  rect:
+    serializedVersion: 2
+    x: 278
+    y: 65
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5830088691931211253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: 96fd03e7-774c-4d37-bfd4-f5993aee69d6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: My mon has terrible bunions,can you help me?
+  children:
+  - e2c9b49b-4c7b-4d3a-9239-6ad29e44251a
+  - c643f5cf-92cd-4ba6-807e-40bddfa3c069
+  - f1ec11b6-9707-4624-8075-4c3c10c5037e
+  - e03dda7f-472f-466c-8c2e-98d3895c3f5c
+  rect:
+    serializedVersion: 2
+    x: 41
+    y: 163
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5770740353550566174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: 10770924-5b33-4695-b685-401aa95341ce
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Well.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 507
+    y: 66
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5692308788931586034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: f1ec11b6-9707-4624-8075-4c3c10c5037e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I'm already on the case.
+  children:
+  - 276194c8-bbfe-40bc-aaf1-398484dcd48b
+  rect:
+    serializedVersion: 2
+    x: 277
+    y: 268
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother hubbards bunions
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Mother hubbards bunions
+        negate: 1
+--- !u!114 &-4843832283899146218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: 6f72d04b-3d9e-4105-b50e-1c822d929a18
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: She needs the foot cream from the pharmacy.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 521
+    y: 165
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-4598418439773475927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: e2c9b49b-4c7b-4d3a-9239-6ad29e44251a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Sure,how?
+  children:
+  - 6f72d04b-3d9e-4105-b50e-1c822d929a18
+  rect:
+    serializedVersion: 2
+    x: 283
+    y: 163
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother hubbards bunions
+        negate: 1
+--- !u!114 &-827692646559569560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: 0e280a8f-6840-4662-8d39-3acd2fc84097
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: That'a amazing thank you!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 532
+    y: 375
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc3ffea042388346a0215a07b46b7b6, type: 3}
+  m_Name: Motherhubbards Son
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -5830088691931211253}
+  - {fileID: -4598418439773475927}
+  - {fileID: -7583971798302735944}
+  - {fileID: -4843832283899146218}
+  - {fileID: -5770740353550566174}
+  - {fileID: -5692308788931586034}
+  - {fileID: 4310507646483288205}
+  - {fileID: 3932247131801538244}
+  - {fileID: -827692646559569560}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &3932247131801538244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: e03dda7f-472f-466c-8c2e-98d3895c3f5c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I have the foot cream!
+  children:
+  - 0e280a8f-6840-4662-8d39-3acd2fc84097
+  rect:
+    serializedVersion: 2
+    x: 282
+    y: 375
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother hubbards bunions
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Mother hubbards bunions
+        negate: 0
+      - predicate: HasInventoryItem
+        parameters:
+        - 059b0fc5-73b4-4b36-8649-fca2429120e4
+        negate: 0
+--- !u!114 &4310507646483288205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a9ca74ed684b4e860f580d80cd354, type: 3}
+  m_Name: 276194c8-bbfe-40bc-aaf1-398484dcd48b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oop, bad memory.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 517
+    y: 268
+    width: 200
+    height: 100
+  onEnterAcion: 
+  onExitAction: 
+  condition:
+    and: []
