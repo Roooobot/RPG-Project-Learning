@@ -190,6 +190,18 @@ CapsuleCollider:
   m_Height: 1.9838159
   m_Direction: 1
   m_Center: {x: 0.0033302307, y: 0.9914402, z: 0}
+--- !u!114 &411754870567588132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902660786131331472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708a8318844bbe0478e60255abc7b1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &696574149972569318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +251,7 @@ MonoBehaviour:
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
   raycastRadius: 1
+  numberOfAbilities: 6
 --- !u!114 &2037653504632166904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +264,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c79cef933159d4caa815b37c23e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2843322649484996352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902660786131331472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2091b0ad4e2a69a4d8cb7e649adf5379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingBalance: 400
 --- !u!114 &3764221777278108133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Herbet Socksworthy
---- !u!114 &2843322649484996352
+--- !u!114 &3128038731983130292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,10 +362,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4902660786131331472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2091b0ad4e2a69a4d8cb7e649adf5379, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f234e8cf1e6f4342baf212e1ad1b0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingBalance: 400
+  maxMana: 200
 --- !u!4 &9169026001514661365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196697675836667564, guid: 750e3c6876a501e42b5827ec7a3d24d1,

@@ -15,6 +15,7 @@ namespace RPG.Combat
         [SerializeField] UnityEvent onHit;
 
         Health target = null;
+        Vector3 targetPoint;
         float damage = 0f;
         GameObject instigator = null;
 
@@ -25,8 +26,7 @@ namespace RPG.Combat
 
         private void Update()
         {
-            if (target == null) return;
-            if (isHoming && !target.IsDead())
+            if (target != null && isHoming && !target.IsDead())
             {
                 transform.LookAt(GetAimLocation());
             }
@@ -35,7 +35,18 @@ namespace RPG.Combat
 
         public void SetTarget(Health target,GameObject instigator, float damage)
         {
+            SetTarget(instigator, damage, target);
+        }
+
+        public void SetTarget(Vector3 targetPoint, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage,null , targetPoint);
+        }
+
+        public void SetTarget(GameObject instigator,float damage,Health target=null,Vector3 targetPoint = default)
+        {
             this.target = target;
+            this.targetPoint = targetPoint;
             this.instigator = instigator;
             this.damage = damage;
 
@@ -44,6 +55,10 @@ namespace RPG.Combat
 
         private Vector3 GetAimLocation()
         {
+            if(target == null)
+            {
+                return targetPoint;
+            }
             CapsuleCollider targetCapsule =target.GetComponent<CapsuleCollider>();
             if(targetCapsule == null)
             {
@@ -51,11 +66,14 @@ namespace RPG.Combat
             }
             return target.transform.position + Vector3.up * targetCapsule.height / 2;
         }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Health>() != target) return;
-            if (target.IsDead()) return;
-            target.TakeDamage(instigator, damage);
+            Health health = other.GetComponent<Health>();
+            if (target != null && health != target) return;
+            if (health == null || health.IsDead()) return;
+            if (other.gameObject == instigator) return;
+            health.TakeDamage(instigator, damage);
 
             speed = 0;
 
