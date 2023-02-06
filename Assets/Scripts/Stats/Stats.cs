@@ -10,6 +10,9 @@ namespace RPG.Stats
         Damage,
         Mana,
         ManaRegenRate,
+        TotalTraitPoints,
+        BuyingDiscountPercentage,
+        Defence,
     }
 
 

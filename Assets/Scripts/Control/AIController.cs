@@ -39,16 +39,12 @@ namespace RPG.Control
             mover = GetComponent<Mover>();
             player = GameObject.FindWithTag("Player");
             guardPosition = new LazyValue<Vector3>(GetGuardPosition);
+            guardPosition.ForceInit();
         }
 
         private Vector3 GetGuardPosition()
         {
             return transform.position;
-        }
-
-        private void Start()
-        {
-            guardPosition.ForceInit();
         }
 
         private void Update()
@@ -72,6 +68,16 @@ namespace RPG.Control
         public void Aggrevate()
         {
             timeSinceAggrevated = 0;
+        }
+
+        public void Reset()
+        {
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent.Warp(guardPosition.value);
+            timeSinceLastSawPlayer = Mathf.Infinity;
+            timeSinceArrivedAtWaypoint = Mathf.Infinity;
+            timeSinceAggrevated = Mathf.Infinity;
+            currentWaypointIndex = 0;
         }
 
         //更新计时器
@@ -155,5 +161,6 @@ namespace RPG.Control
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, chaseDistance);
         }
+
     }
 }

@@ -49,6 +49,16 @@ namespace RPG.Saving
         {
             RestoreState(LoadFile(saveFile));
         }
+        public IEnumerable<string> ListSaves()
+        {
+            foreach (string path in Directory.EnumerateFiles(Application.persistentDataPath))
+            {
+                if(Path.GetExtension(path) == ".sav")
+                {
+                    yield return Path.GetFileNameWithoutExtension(path);
+                }
+            } 
+        }
         /// <summary>
         /// 删除给定保存文件中的状态。
         /// </summary>
@@ -68,6 +78,12 @@ namespace RPG.Saving
                 formatter.Serialize(stream, state);
             }
 
+        }
+
+        public bool SaveFileExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            return File.Exists(path);
         }
 
         private Dictionary<string, object> LoadFile(string saveFile)
